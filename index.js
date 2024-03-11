@@ -7,7 +7,7 @@ const app = express()
 const porta = 3000
 //configuramos uma rota principal para renderizar o texto
 app.get('/', (req, res)=>{
-    res.send('ola mundo')
+    res.send('ola mundo, estamos configurados no azuredevops')
 })
 // porta sendo ouvida na porta em questão.
 app.listen(porta, ()=>{
