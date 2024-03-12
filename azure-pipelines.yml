@@ -17,6 +17,6 @@ stages:
         steps:
           - checkout: self
           - script: |
-              git remote add azure [https://lucaspontes@dev.azure.com/lucaspontes/alset/_git/alset]
+              git remote add azure https://lucaspontes@dev.azure.com/lucaspontes/alset/_git/alset
               git push azure main
             displayName: 'Sync Changes'
