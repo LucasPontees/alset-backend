@@ -18,5 +18,8 @@ stages:
           - checkout: self
           - script: |
               git remote add azure https://lucaspontes@dev.azure.com/lucaspontes/alset/_git/alset
-              git push azure HEAD:refs/heads/main
+              git fetch azure
+              git checkout main
+              git merge azure/main
+              git push azure main
             displayName: 'Sync Changes'
