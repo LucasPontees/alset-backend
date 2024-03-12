@@ -4,18 +4,19 @@
 # https://docs.microsoft.com/azure/devops/pipelines/languages/javascript
 
 trigger:
-- main
+  branches:
+    include:
+      - main
 
-pool:
-  vmImage: ubuntu-latest
-
-steps:
-- task: NodeTool@0
-  inputs:
-    versionSpec: '10.x'
-  displayName: 'Install Node.js'
-
-- script: |
-    npm install
-    npm run build
-  displayName: 'npm install and build'
+stages:
+  - stage: Sync
+    jobs:
+      - job: SyncChanges
+        pool:
+          vmImage: ubuntu-latest
+        steps:
+          - checkout: self
+          - script: |
+              git remote add azure [https://lucaspontes@dev.azure.com/lucaspontes/alset/_git/alset]
+              git push azure main
+            displayName: 'Sync Changes'
