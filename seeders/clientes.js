@@ -8,7 +8,7 @@ module.exports = {
     await queryInterface.bulkInsert('clientes', [{
       nome: 'Marcela Beh',
       email: 'marcela',
-      cpf: await bcrypt.hash('123', 10),
+      cpf: '00000000000',
       telefone: '984888601',
     }]);
 
@@ -16,7 +16,7 @@ module.exports = {
     await queryInterface.bulkInsert('clientes', [{
       nome: 'Lucas Pontes',
       email: 'lucas',
-      cpf: await bcrypt.hash('456', 10),
+      cpf: '00000000000',
       telefone: '984886610',
     }]);
 
@@ -24,7 +24,7 @@ module.exports = {
     await queryInterface.bulkInsert('clientes', [{
       nome: 'Aurelio Muzzi',
       email: 'aurelio',
-      cpf: await bcrypt.hash('789', 10),
+      cpf: '00000000000',
       telefone: '984886610',
     }]);
   },
