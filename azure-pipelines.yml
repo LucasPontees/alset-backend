@@ -7,13 +7,19 @@ pool:
   vmImage: 'ubuntu-latest'
 
 steps:
+- task: NodeTool@0
+  inputs:
+    versionSpec: '14.x'
+  displayName: 'Install Node.js'
+
 - script: |
     npm install
+    npm install react-scripts
     npm run build
   displayName: 'Install dependencies and build'
 
 - task: PublishBuildArtifacts@1
   inputs:
-    PathtoPublish: '$(Build.SourcesDirectory)/dist'
-    ArtifactName: 'dist'
+    PathtoPublish: '$(Build.SourcesDirectory)/build'
+    ArtifactName: 'build'
     publishLocation: 'Container'
