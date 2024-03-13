@@ -9,3 +9,13 @@ $ npm install
 ```bash
 $ cp example.env .env 
 ```
+```bash
+$ npx sequelize-cli db:create 
+```
+```bash
+$ npx sequelize-cli db:migrate 
+```
+```bash
+$ npx sequelize-cli db:seed:all 
+```
+
