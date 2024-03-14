@@ -1,0 +1,18 @@
+trigger:
+  branches:
+    include:
+      - main
+
+jobs:
+- job: UpdateRepository
+  displayName: Update repository
+  pool:
+    vmImage: 'ubuntu-latest'
+  steps:
+  - script: |
+      git clone https://github.com/LucasPontees/alset-backend.git
+      cd alset-backend
+      git config user.email "eulpontes@gmail.com"
+      git config user.name "LucasPontees"
+      git push https://lucaspontes@dev.azure.com/lucaspontes/alset/_git/alset
+    displayName: 'Update repository on Azure DevOps'
