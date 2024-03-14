@@ -4,12 +4,18 @@
   "description": "projeto ERP - gestao empresarial",
   "main": "index.js",
   "scripts": {
+<<<<<<< HEAD
     "serve": "nodemon ./src/index.js"
+=======
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js"
+>>>>>>> 84f2710ccdad7264ef1fd22547197dcbee425ab0
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+<<<<<<< HEAD
     "bcrypt": "^5.1.1",
     "body-parser": "^1.20.2",
     "cors": "^2.8.5",
@@ -17,6 +23,10 @@
     "express": "^4.18.3",
     "mysql2": "^3.9.2",
     "sequelize": "^6.37.1"
+=======
+    "cors": "^2.8.5",
+    "express": "^4.18.3"
+>>>>>>> 84f2710ccdad7264ef1fd22547197dcbee425ab0
   },
   "devDependencies": {
     "nodemon": "^3.1.0"

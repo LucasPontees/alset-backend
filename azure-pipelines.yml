@@ -1,6 +1,7 @@
 trigger:
   branches:
     include:
+<<<<<<< HEAD
       - main
 
 jobs:
@@ -16,3 +17,21 @@ jobs:
       git config user.name "LucasPontees"
       git push https://lucaspontes@dev.azure.com/lucaspontes/alset/_git/alset
     displayName: 'Update repository on Azure DevOps'
+=======
+    - main
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+steps:
+- script: |
+    npm install
+    npm run build
+  displayName: 'Install dependencies and build'
+
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: '$(Build.SourcesDirectory)/dist'
+    ArtifactName: 'dist'
+    publishLocation: 'Container'
+>>>>>>> 84f2710ccdad7264ef1fd22547197dcbee425ab0
